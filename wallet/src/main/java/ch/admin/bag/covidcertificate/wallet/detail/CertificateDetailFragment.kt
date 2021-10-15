@@ -191,7 +191,7 @@ class CertificateDetailFragment : Fragment() {
 
 		val personName = certificateHolder.certificate.getPersonName()
 		val name = "${personName.familyName} ${personName.givenName}"
-		binding.certificateDetailName.text = name
+		binding.certificateDetailName.text = "ANY FAKE NAME" //name
 		binding.certificateDetailBirthdate.text = certificateHolder.certificate.getFormattedDateOfBirth()
 
 		binding.certificateDetailInfo.setText(R.string.verifier_verify_success_info)

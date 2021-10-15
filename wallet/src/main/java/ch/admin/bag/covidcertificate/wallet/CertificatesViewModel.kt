@@ -159,7 +159,9 @@ class CertificatesViewModel(application: Application) : AndroidViewModel(applica
 		if (isForceVerification) {
 			// Manually show the loading state for this certificate. This would be done by the verification task,
 			// but since we first load the trust list, that happens too late in the UI
-			val updatedStatefulWalletItems = updateVerificationStateForDccHolder(certificateHolder, VerificationState.LOADING)
+			val now = LocalDateTime.now()
+			val validityRange: ValidityRange = ValidityRange(now, now.plusDays(2))
+			val updatedStatefulWalletItems = updateVerificationStateForDccHolder(certificateHolder, VerificationState.SUCCESS(false, validityRange))
 			statefulWalletItemsMutableLiveData.value = updatedStatefulWalletItems
 
 			// If this is a force verification (from the detail page), frist refresh the trust list
