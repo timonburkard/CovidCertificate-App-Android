@@ -26,6 +26,7 @@ import ch.admin.bag.covidcertificate.sdk.core.models.healthcert.CertificateHolde
 import ch.admin.bag.covidcertificate.sdk.core.models.state.DecodeState
 import ch.admin.bag.covidcertificate.sdk.core.models.state.StateError
 import ch.admin.bag.covidcertificate.sdk.core.models.state.VerificationState
+import ch.admin.bag.covidcertificate.sdk.core.verifier.nationalrules.ValidityRange
 import ch.admin.bag.covidcertificate.wallet.data.WalletDataItem
 import ch.admin.bag.covidcertificate.wallet.data.WalletDataSecureStorage
 import ch.admin.bag.covidcertificate.wallet.homescreen.pager.StatefulWalletItem
@@ -39,6 +40,7 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
 import java.io.IOException
 import java.time.Instant
+import java.time.LocalDateTime
 import kotlin.collections.set
 
 class CertificatesViewModel(application: Application) : AndroidViewModel(application) {
