@@ -115,7 +115,7 @@ an identity document"</string>
     <string name="delete_button">"Delete"</string>
 
     <!-- Android App Name für die Wallet -->
-    <string name="wallet_app_name">"Covid Cert"</string>
+    <string name="wallet_app_name">"My Covid Cert"</string>
 
     <!-- Header im Onboarding-Screen "Die App" -->
     <string name="wallet_onboarding_app_header">"The app"</string>
