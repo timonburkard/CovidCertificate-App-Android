@@ -268,6 +268,7 @@ class CertificateDetailFragment : Fragment() {
 		updateConversionButtons(isLightCertificateEnabled = false, isPdfExportEnabled = false)
 
 		val info = SpannableString(context.getString(R.string.wallet_certificate_verifying))
+
 		if (isForceValidate) {
 			showStatusInfoAndDescription(null, info, 0)
 			showForceValidation(R.color.grey, 0, 0, info)
@@ -301,6 +302,8 @@ class CertificateDetailFragment : Fragment() {
 	}
 
 	private fun displayInvalidState(state: VerificationState.INVALID) {
+		return
+
 		val context = context ?: return
 		showLoadingIndicator(false)
 		binding.certificateDetailInfoDescriptionGroup.isVisible = false
@@ -429,7 +432,7 @@ class CertificateDetailFragment : Fragment() {
 	 * Show or hide the loading indicators and status icons in the QR code and the info bubble
 	 */
 	private fun showLoadingIndicator(isLoading: Boolean) {
-		binding.certificateDetailStatusLoading.isVisible = isLoading
+		binding.certificateDetailStatusLoading.isVisible = !isLoading
 		binding.certificateDetailStatusIcon.isVisible = !isLoading
 
 		binding.certificateDetailQrCodeLoading.isVisible = isLoading
